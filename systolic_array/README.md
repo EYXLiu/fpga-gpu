@@ -16,7 +16,7 @@
 | cycle | a_0 | a_1 | b_0 | b_1 |
 | --- | :--- | :--- | :--- | :--- | 
 | 0 | 1 | 0 | 5 | 0 |
-| 1 | 2 | 3| 7 | 6 |
+| 1 | 3 | 2 | 7 | 6 |
 | 2 | 0 | 4 | 0 | 8 | 
 
 - **4x4 systolic array** I used wires for input/outputs and then generate for the PEs to make less manual coding and technically make it extendable to any number of PEs
