@@ -3,7 +3,7 @@
 //    [3, 4]
 // B: [5, 6]
 //    [7, 8]
-// Expected Answer:
+// expected answer:
 //    [19, 22]
 //    [43, 50]
 
