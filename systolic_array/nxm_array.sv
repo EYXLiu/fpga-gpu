@@ -1,22 +1,27 @@
 module systolic_nxn #(
-    parameter N = 4
+    parameter N = 2, 
+    parameter M = 3
 ) (
     input logic clk,
     input logic rst,
 
     input logic [7:0] a_in [0:N-1],
-    input logic [7:0] b_in [0:N-1],
+    input logic [7:0] b_in [0:M-1],
 
-    output logic [31:0] c [0:N-1][0:N-1]
+    output logic [31:0] c [0:N-1][0:M-1]
 );
 
-    logic [7:0] a_wire [0:N-1][0:N];
-    logic [7:0] b_wire [0:N][0:N-1];
+    logic [7:0] a_wire [0:N-1][0:M];
+    logic [7:0] b_wire [0:N][0:M-1];
 
     genvar i;
     generate
         for (i = 0; i < N; i++) begin
             assign a_wire[i][0] = a_in[i];
+        end
+    endgenerate
+    generate
+        for (i = 0; i < M; i++) begin
             assign b_wire[0][i] = b_in[i];
         end
     endgenerate
@@ -26,7 +31,7 @@ module systolic_nxn #(
 
     generate
         for (row = 0; row < N; row++) begin : rows
-            for (col = 0; col < N; col++) begin : cols
+            for (col = 0; col < M; col++) begin : cols
                 pe pe_inst (
                     .clk(clk),
                     .rst(rst),
