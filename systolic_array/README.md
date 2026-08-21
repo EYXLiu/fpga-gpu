@@ -22,3 +22,5 @@
 - **4x4 systolic array** I used wires for input/outputs and then generate for the PEs to make less manual coding and technically make it extendable to any number of PEs
     - a and b inputs are still linear, but c is not an array instead of a linear output
     - same staggering as above
+
+- **nxn and nxm systolic array** This would be expandable to any number, which would be especially useful when we try to integrate neural networks into this TPU
