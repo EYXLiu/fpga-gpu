@@ -1,0 +1,11 @@
+## Notes
+- **Unified Buffer (BRAM)** is basically the memory used to hold data
+    - small, on-chip
+    - BRAM is synchronous, each read/write is one cycle
+    - Tang Nano 20K has 103.5kb BRAM
+- **DRAM/SDRAM** is also memory
+    - off-chip, much slower but much larger
+    - Tang Nano 20K has 64mb SDRAM
+- **USB** is the communication protocol between the computer and the FPGA
+    - Dataflow is `USB -> DRAM -> BRAM`
+    - BRAM only stores the chunks the model is looking at, DRAM stores the matrices
